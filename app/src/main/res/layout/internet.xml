@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/title"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.19"
+        android:fontFamily="@android:string/ok"
+        android:textSize="150dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_weight="0.38"
+        android:background="#ffb1ecff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_weight="0.19"
+        android:text="Enter some seconds and hit go"
+        android:layout_gravity="bottom" />
+
+    <Button
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:onClick="startTimer"
+        android:id="@+id/button"
+        android:layout_gravity="right"
+        android:layout_weight="0.19"
+        android:background="#ff50ff61" />
+</LinearLayout>
+</ScrollView>

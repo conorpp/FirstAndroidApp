@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.phoneapp.app.MainActivity">
+
+    <TextView
+        android:text="This is the index of my sample apps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensors"
+        android:id="@+id/button"
+        android:layout_marginTop="52dp"
+        android:onClick="beginSensors"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:background="#ff70a5ff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timer"
+        android:onClick="beginInternet"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:background="#ffa3ff9d" />
+
+
+</RelativeLayout>
