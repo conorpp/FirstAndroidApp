@@ -34,12 +34,14 @@ public class slipperyActivity extends Activity {
     @Override
     protected void onDestroy() {
         this.LOG( "Destroying...");
+
         super.onDestroy();
     }
 
     @Override
     protected void onStop() {
         this.LOG("Stopping...");
+        this.Game.stop();
         super.onStop();
     }
 

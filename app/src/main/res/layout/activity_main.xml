@@ -45,5 +45,15 @@
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Internet"
+        android:id="@+id/button3"
+        android:layout_below="@+id/slippery"
+        android:layout_alignParentLeft="true"
+        android:background="#ffff00d3"
+        android:onClick="beginInternet"/>
+
 
 </RelativeLayout>

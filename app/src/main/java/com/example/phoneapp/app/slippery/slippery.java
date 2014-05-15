@@ -21,6 +21,7 @@ import com.example.phoneapp.app.slippery.models.Accelerometer.AccelData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by pp on 5/12/14.
@@ -32,7 +33,6 @@ public class slippery extends SurfaceView implements  SurfaceHolder.Callback {
 
     public List<Dude> dudes;
     private Accelerometer accelerometer;
-    private Bitmap dudeBitmap;
 
     private Paint slipperyText;
     private Paint buttonText;
@@ -65,21 +65,34 @@ public class slippery extends SurfaceView implements  SurfaceHolder.Callback {
 
     public void stop(){
         if (this.engine != null){
-         //   this.engine.setRunning(false);
+            this.LOG("Surface has been destroyed . . . ");
+            boolean retry = true;
+            this.engine.setRunning(false);
+            this.accelerometer.end();
+            while (retry) {
+                try {
+                    this.LOG("about to join thread ...");
+                    this.engine.join();
+                    this.LOG("thread has been joined");
+                    retry = false;
+                }catch (InterruptedException e){
+                    this.LOG("thread threw exception");
+                }
+            }
+            this.LOG("Surface has been destroyed safely . . . ");
+            this.engine = null;
         }
     }
 
     private void addGraphics(){
         this.slipperyText = new Paint();
         this.slipperyText.setARGB(255, 255, 255, 255);
-        this.slipperyText.setTextSize(55f);
+        this.slipperyText.setTextSize(40f);
         this.buttonText = new Paint();
         this.buttonText.setColor(Color.BLACK);
         this.buttonText.setTextSize(35f);
         this.ButtonPaint = new Paint();
-        this.ButtonPaint.setColor(Color.CYAN);
-
-        this.dudeBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.favicon);
+        this.ButtonPaint.setColor(Color.GREEN);
     }
     private void addGraphics(Canvas c){
         int top = 210;
@@ -90,7 +103,8 @@ public class slippery extends SurfaceView implements  SurfaceHolder.Callback {
     }
 
     private void addDude(){
-        this.dudes.add(new Dude(this.dudeBitmap));
+        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.favicon0+new Random().nextInt(5));
+        this.dudes.add(new Dude(b));
     }
 
     @Override
@@ -117,22 +131,7 @@ public class slippery extends SurfaceView implements  SurfaceHolder.Callback {
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        this.LOG("Surface has been destroyed . . . ");
-        boolean retry = true;
-        this.engine.setRunning(false);
-        this.accelerometer.end();
 
-        while (retry) {
-            try {
-                this.LOG("about to join thread ...");
-                this.engine.join();
-                this.LOG("thread has been joined");
-                retry = false;
-            }catch (InterruptedException e){
-                this.LOG("thread threw exception");
-            }
-        }
-        this.LOG("Surface has been destroyed safely . . . ");
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -180,8 +179,10 @@ public class slippery extends SurfaceView implements  SurfaceHolder.Callback {
 
         int dif = ((int)System.currentTimeMillis()-(int)this.begin)+1;
         String msg = "FPS: "+(this.engine.getFPS()*this.engine.getPeriod())/dif;
+        String msg2 = "Particles: "+this.dudes.size();
         this.begin = System.currentTimeMillis();
-        c.drawText(msg, c.getWidth()-280, 120, this.slipperyText);
+        c.drawText(msg, c.getWidth()-280, 100, this.slipperyText);
+        c.drawText(msg2, c.getWidth()-280, 160, this.slipperyText);
 
     }
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to the internet"
+        android:id="@+id/title" />
+
+    <TextView
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/httpResponse"
+        android:layout_weight="0.86"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignRight="@+id/button2" />
+
+    <ImageView
+        android:layout_width="364dp"
+        android:layout_height="364dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/refresh"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Previous"
+        android:id="@+id/previous"
+        android:layout_alignTop="@+id/next"
+        android:layout_alignBottom="@+id/next"
+
+        android:layout_alignLeft="@+id/imageView"
+        android:background="#ff84a6ff"
+        android:onClick="previousImg"
+        />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="82dp"
+        android:text="Next"
+        android:id="@+id/next"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:background="#ff97ff8f"
+        android:onClick="nextImg"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:id="@+id/refresh"
+        android:layout_alignParentTop="true"
+        android:background="#ff0099ff"
+        android:layout_alignParentRight="true"
+        android:textColor="#fffffbff"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:onClick="refreshImgLinks"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="..."
+        android:id="@+id/loader"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/title" />
+
+</RelativeLayout>
+</ScrollView>
