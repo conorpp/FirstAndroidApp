@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">phoneApp</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Hello Android</string>
+    <string name="sensor_name">Sensors</string>
+    <string name="timer_name">Timer</string>
+    <string name="slippery_name">Bench Mark</string>
+    <string name="internet_name">Imgur</string>
     <string name="action_settings">Settings</string>
 
 </resources>

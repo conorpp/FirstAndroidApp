@@ -21,26 +21,26 @@
         </activity>
         <activity
             android:name=".sensors.SensorPicker"
-            android:label="@string/app_name" >
+            android:label="@string/sensor_name" >
             <intent-filter>
             </intent-filter>
         </activity>
         <activity
             android:name=".countdown.timer"
-            android:label="@string/app_name" >
+            android:label="@string/timer_name" >
             <intent-filter>
             </intent-filter>
         </activity>
         <activity
             android:name=".slippery.slipperyActivity"
             android:screenOrientation="landscape"
-            android:label="@string/app_name" >
+            android:label="@string/slippery_name" >
             <intent-filter>
             </intent-filter>
         </activity>
         <activity
             android:name=".internet.Internet"
-            android:label="@string/app_name" >
+            android:label="@string/internet_name" >
             <intent-filter>
             </intent-filter>
         </activity>
