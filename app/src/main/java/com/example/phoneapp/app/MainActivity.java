@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.phoneapp.app.timers.timer;
+import com.example.phoneapp.app.slippery.slipperyActivity;
+import com.example.phoneapp.app.countdown.timer;
 import com.example.phoneapp.app.sensors.SensorPicker;
 
 
@@ -44,9 +45,14 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, SensorPicker.class);
         startActivity(intent);
     }
-    public void beginInternet(View view){
-        this.LOG("the internet has been touched!");
+    public void beginCountdown(View view){
+        this.LOG("the timer has been touched!");
         Intent intent = new Intent(this, timer.class);
+        startActivity(intent);
+    }
+    public void beginSlippery(View view){
+        this.LOG("the slippery has been touched!");
+        Intent intent = new Intent(this, slipperyActivity.class);
         startActivity(intent);
     }
     void LOG(String m){

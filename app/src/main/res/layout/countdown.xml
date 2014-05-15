@@ -39,7 +39,7 @@
         android:layout_width="103dp"
         android:layout_height="wrap_content"
         android:text="GO"
-        android:onClick="startTimer"
+        android:onClick="beginCountdown"
         android:id="@+id/button"
         android:layout_gravity="right"
         android:layout_weight="0.19"

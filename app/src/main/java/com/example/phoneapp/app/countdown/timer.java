@@ -1,4 +1,4 @@
-package com.example.phoneapp.app.timers;
+package com.example.phoneapp.app.countdown;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -21,11 +21,11 @@ public class timer extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         this.LOG("onCreate");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.internet);
+        setContentView(R.layout.countdown);
         this.title = (TextView) findViewById(R.id.title);
     }
 
-    public void startTimer(View v){
+    public void beginCountdown(View v){
         this.LOG("touched");
         EditText e = (EditText) findViewById(R.id.editText);
         this.LOG("VAL: "+e.getText().toString());
